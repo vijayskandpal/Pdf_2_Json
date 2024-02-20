@@ -36,9 +36,11 @@ if uploaded_file is not None:
     save_json(pdf_data, output_json_filename)
     st.success("Text extracted from PDF and saved to JSON successfully.")
 
-# Sidebar for folder selection
-#selected_folder = st.sidebar.selectbox("Select Folder to Save JSON File", os.listdir())
-save_folder = os.path.join(os.getcwd())#, selected_folder)
+    # Display text areas
+    st.header("Text from PDF")
+    for i, page_text in enumerate(all_text):
+        st.subheader(f"Page {i + 1}")
+        st.text_area(label=f"Text from Page {i + 1}", value=page_text, height=200)
 
 # Download button
 if st.button("Convert JSON File"):
