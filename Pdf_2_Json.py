@@ -34,7 +34,7 @@ if uploaded_file is not None:
 
     # Save the data to a JSON file
     save_json(pdf_data, output_json_filename)
-    st.success("Text extracted from PDF and saved to JSON successfully.")
+    st.success("Text extracted from PDF and Display text successfully.")
 
     # Display text areas
     st.header("Text from PDF")
